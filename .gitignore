@@ -1,0 +1,4 @@
+*sublime*
+*.min*
+**/vendor*
+*.DS_Store
