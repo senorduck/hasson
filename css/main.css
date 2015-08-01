@@ -16,6 +16,10 @@ body {
     line-height: 1.4;
 }
 
+body.image_open {
+    overflow: hidden !important;
+}
+
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -199,13 +203,91 @@ nav a:hover {
 #work {
     display: inline-block;
 }
+#work_image_container {
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+    overflow-y: scroll;
+    width: 100%;
+    z-index: 10;
+}
+
+#work_large_image {
+    margin: 0 auto;
+    max-height: 640px;
+    min-height: 320px;
+    margin-bottom: 10px;
+    position: relative;
+    top: 90px;
+    height: 80%;
+    text-align: center;
+}
+
+@media only screen and (max-width : 484px),
+only screen and (max-device-width : 484px){
+    #work_large_image {top: 140px;}
+}
+
+@media only screen and (min-device-width : 320px)
+and (max-device-width : 480px) 
+and (orientation : landscape) {
+    #work_large_image { width: 40%;}
+}
+
+#work_large_image img {
+    max-height: 100%;
+    max-width: 100%;
+    z-index: 100;
+}
+
 .work-image {
     float: left;
-    width: 33.3%;
+    margin: 1.6% .8% 0;
+    width: 15%;
+}
+
+@media only screen and (max-width : 1100px),
+only screen and (max-device-width : 1100px){
+    .work-image {width: 23.4%;}
+}
+
+@media only screen and (max-width : 800px),
+only screen and (max-device-width : 800px){
+    .work-image {width: 31.7%;}
+}
+
+@media only screen and (max-width : 630px),
+only screen and (max-device-width : 630px){
+    .work-image {width: 48.4%;}
+}
+
+@media only screen and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    .work-image {width: 31.8%;}
 }
 
 .work-image img {
+    cursor: pointer;
     max-width: 100%;
+    transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+}
+
+.work-image img:hover {
+    -webkit-transform: scale(1.03,1.03);
+    -moz-transform: scale(1.03,1.03);
+}
+
+a#load_more {
+    color: #012003;
+    float: right;
+    margin-right: 1.6%;
 }
 
 #contact {
